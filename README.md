@@ -1,17 +1,17 @@
 # Decorators and Spam, it's whats for breakfast
 
 This is a presentation on decorators given to DerbyPy, the Greater Louisville,
-KY Python Meetup. Find us at https://www.meetup.com/DerbyPy.
+KY Python Meetup. Find us on [Meetup](https://www.meetup.com/DerbyPy).
 
 ## Getting started
 
-Most of the code in this repository runs without any additional packages since
-it is just demos, however some require Flask and wrapt. To install all the
-dependencies do the following:
+This code uses iPython notebook for the demonstration. If you want to run the
+examples you will need to install the dependencies. The dependencies come
+prepackaged with the repo.
 
 **The short version**
 - Create a virtualenv
-- Run `pip install --use-wheel --no-index --find-links=requirements/wheelhouse -r dev.txt`
+- Run `pip install --use-wheel --no-index --find-links=requirements/wheelhouse -r requirements/dev.txt`
 
 
 **The long version**
@@ -34,34 +34,20 @@ This is a temporary environment. It will be deleted when you run 'deactivate'.
 $ pip install -U pip wheel
 
 # Now install the dependencies
-$ pip install --use-wheel --no-index --find-links=requirements/wheelhouse -r dev.txt
+$ pip install --use-wheel --no-index --find-links=requirements/wheelhouse -r requirements/dev.txt
 ```
 
+**If you don't care about using the wheelhouse...**
+- Create a virtualenv
+- Run `pip install -r requirements/dev.txt`
 
 ## Outline
 
-1. Last things first, where are we going? (/spam)
-1. Overview of required Python concepts (/concepts)
-    1. Functions
-    1. Globals and locals
-    1. Scope
-    1. Functions in functions
-    1. Objects
-    1. Closures
-1. Understanding decorators. (/decorators)
-    1. Simple Decorators
-    2. At Runtime
-    3. functools
-    4. Args & Kwargs
-1. Applying decorators to the real world. (/spam)
-    1. Flask rate limiting application.
+1. Overview of required Python concepts (Concepts.ipynb)
+1. A simple functional decorator with Flask (/spam)
 
 ## Helpful references
 
-1. [How you implemented your Python decorator is
-   wrong.](http://blog.dscpl.com.au/2014/01/how-you-implemented-your-python.html)
 1. [Python Decorators in 12 Steps](http://simeonfranklin.com/blog/2012/jul/1/python-decorators-in-12-steps/)
-    - Before you even think about looking at this code, read this article.
-1. [functools.wraps docs](https://docs.python.org/2/library/functools.html#functools.wraps)
 
 
