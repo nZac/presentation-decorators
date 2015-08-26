@@ -11,7 +11,7 @@ api_clients = {}
 
 def ratelimit(view):
     @functools.wraps(view)
-    def wrapped_func():
+    def wrapped_func(*args, **kwargs):
         ip_addr = flask.request.remote_addr
 
         # The current client requesting a page
@@ -32,7 +32,7 @@ def ratelimit(view):
             resp.status_code = 403
         else:
             # This client still has requests remaining, call the function
-            resp = view()
+            resp = view(*args, **kwargs)
 
         # Add helpful rate limit headers
         resp.headers['RateLimit-Limit'] = client.limit
